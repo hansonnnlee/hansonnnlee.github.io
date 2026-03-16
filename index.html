@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李航硕 · 个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.1);
+            padding: 2.5rem 2rem;
+        }
+
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 1.5rem;
+        }
+
+        .lang-btn {
+            background: #e2e8f0;
+            border: none;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: #334155;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: #cbd5e1;
+        }
+
+        .lang-btn.active {
+            background: #0f172a;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.25rem;
+            color: #0f172a;
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #334155;
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #e2e8f0;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .edu-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .edu-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .edu-meta {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 1.5rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 650px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 语言切换按钮 -->
+        <div class="lang-switch">
+            <button class="lang-btn active" id="btn-zh" onclick="switchLang('zh')">中文</button>
+            <button class="lang-btn" id="btn-en" onclick="switchLang('en')">English</button>
+        </div>
+
+        <!-- 姓名 / 标题（动态显示） -->
+        <h1 id="name">李航硕</h1>
+        <div class="subhead" id="subtitle">财务数据分析 · 内部控制 · 审计实习生</div>
+
+        <!-- 基本信息 + 简介 两列布局 -->
+        <div class="grid-2">
+            <!-- 左侧卡片：基本信息 -->
+            <div class="info-card">
+                <div class="info-item">
+                    <span class="info-label" id="info-school-label">🏫 学校</span>
+                    <span class="info-value" id="info-school">华东政法大学 · 会计学（司法会计方向）</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label" id="info-interest-label">🔍 研究兴趣</span>
+                    <span class="info-value" id="info-interest">财务数据分析 / 内部控制 / 审计</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label" id="info-email-label">📧 邮箱</span>
+                    <span class="info-value" id="info-email">li_hangshuo@163.com</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label" id="info-phone-label">📞 电话</span>
+                    <span class="info-value" id="info-phone">13730200952</span>
+                </div>
+            </div>
+
+            <!-- 右侧：个人简介 -->
+            <div>
+                <h2 class="section-title" id="profile-title">👤 个人简介</h2>
+                <p id="profile-content">
+                    华东政法大学会计学专业，GPA 3.89/4.0（前4%），CET-6 602。具备容诚咨询（内控评价）和容诚会计师事务所（IPO审计）实习经验，熟悉企业会计准则与内部控制规范。擅长Excel财务数据分析与Python批量数据处理。严谨细致，对数字敏感，致力于在财务分析/审计领域发展。
+                </p>
+            </div>
+        </div>
+
+        <!-- 技能 -->
+        <h2 class="section-title" id="skills-title">🛠️ 技能</h2>
+        <div class="skill-tags" id="skills-list">
+            <!-- 中文技能（默认显示） -->
+            <span class="skill-tag">Python（数据分析）</span>
+            <span class="skill-tag">Excel高级应用</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">内部控制测试</span>
+            <span class="skill-tag">审计流程</span>
+            <span class="skill-tag">财务建模</span>
+            <span class="skill-tag">企业会计准则</span>
+            <span class="skill-tag">CET-6 (602)</span>
+        </div>
+
+        <!-- 教育经历 -->
+        <h2 class="section-title" id="edu-title">📚 教育经历</h2>
+        <div class="edu-item">
+            <div class="edu-title" id="edu-degree">华东政法大学 · 会计学（司法会计方向）</div>
+            <div class="edu-meta" id="edu-date">2024.09 – 至今 · GPA 3.89/4.0 (前4%)</div>
+            <div id="edu-desc">主修课程：中级财务会计、基础会计学、税法学、经济法学、Python与商业数据分析<br>荣誉：校级综合奖学金三等奖 · 初级会计证书 · Python二级</div>
+        </div>
+
+        <!-- 最后更新日期 -->
+        <div class="footer-note" id="last-updated">最后更新：2026年3月16日</div>
+    </div>
+
+    <script>
+        // 中英文内容映射
+        const translations = {
+            zh: {
+                name: "李航硕",                       // 修改为正确中文名
+                subtitle: "财务数据分析 · 内部控制 · 审计实习生",
+                infoSchool: "华东政法大学 · 会计学（司法会计方向）",
+                infoInterest: "财务数据分析 / 内部控制 / 审计",
+                infoEmail: "li_hangshuo@163.com",
+                infoPhone: "13730200952",
+                profileTitle: "👤 个人简介",
+                profileContent: "华东政法大学会计学专业，GPA 3.89/4.0（前4%），CET-6 602。具备容诚咨询（内控评价）和容诚会计师事务所（IPO审计）实习经验，熟悉企业会计准则与内部控制规范。擅长Excel财务数据分析与Python批量数据处理。严谨细致，对数字敏感，致力于在财务分析/审计领域发展。",
+                skillsTitle: "🛠️ 技能",
+                skillsList: ["Python（数据分析）", "Excel高级应用", "Power BI", "内部控制测试", "审计流程", "财务建模", "企业会计准则", "CET-6 (602)"],
+                eduTitle: "📚 教育经历",
+                eduDegree: "华东政法大学 · 会计学（司法会计方向）",
+                eduDate: "2024.09 – 至今 · GPA 3.89/4.0 (前4%)",
+                eduDesc: "主修课程：中级财务会计、基础会计学、税法学、经济法学、Python与商业数据分析<br>荣誉：校级综合奖学金三等奖 · 初级会计证书 · Python二级",
+                lastUpdated: "最后更新：2026年3月16日"
+            },
+            en: {
+                name: "Hanson Li",                     // 英文名按用户要求设置为 Hanson Li
+                subtitle: "Financial Data Analysis · Internal Control · Audit Intern",
+                infoSchool: "East China University of Political Science and Law · Accounting (Forensic Accounting)",
+                infoInterest: "Financial Data Analytics / Internal Control / Auditing",
+                infoEmail: "li_hangshuo@163.com",
+                infoPhone: "13730200952",
+                profileTitle: "👤 Profile",
+                profileContent: "Accounting major at ECUPL, GPA 3.89/4.0 (Top 4%), CET-6 602. Internship experience at RSM Consulting (internal control evaluation) and RSM China (IPO audit). Familiar with CAS and internal control standards. Proficient in Excel for financial analysis and Python for batch data processing. Detail-oriented with numerical sensitivity, aiming to develop in financial analysis/audit.",
+                skillsTitle: "🛠️ Skills",
+                skillsList: ["Python (Data Analysis)", "Advanced Excel", "Power BI", "Internal Control Testing", "Audit Procedures", "Financial Modeling", "CAS", "CET-6 (602)"],
+                eduTitle: "📚 Education",
+                eduDegree: "East China University of Political Science and Law · Accounting (Forensic Accounting)",
+                eduDate: "Sep 2024 – Present · GPA 3.89/4.0 (Top 4%)",
+                eduDesc: "Core courses: Intermediate Financial Accounting, Basic Accounting, Tax Law, Economic Law, Python for Business Data Analysis<br>Honors: Third-class Scholarship · Primary Accounting Certificate · Python Level 2",
+                lastUpdated: "Last updated: March 16, 2026"
+            }
+        };
+
+        let currentLang = 'zh';
+
+        function switchLang(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+
+            // 更新文本内容
+            document.getElementById('name').innerText = t.name;
+            document.getElementById('subtitle').innerText = t.subtitle;
+            document.getElementById('info-school').innerText = t.infoSchool;
+            document.getElementById('info-interest').innerText = t.infoInterest;
+            document.getElementById('info-email').innerText = t.infoEmail;
+            document.getElementById('info-phone').innerText = t.infoPhone;
+            document.getElementById('profile-title').innerText = t.profileTitle;
+            document.getElementById('profile-content').innerText = t.profileContent;
+            document.getElementById('skills-title').innerText = t.skillsTitle;
+            document.getElementById('edu-title').innerText = t.eduTitle;
+            document.getElementById('edu-degree').innerText = t.eduDegree;
+            document.getElementById('edu-date').innerText = t.eduDate;
+            document.getElementById('edu-desc').innerHTML = t.eduDesc;  // 注意innerHTML以支持<br>
+            document.getElementById('last-updated').innerText = t.lastUpdated;
+
+            // 更新技能标签（重新生成）
+            const skillsContainer = document.getElementById('skills-list');
+            skillsContainer.innerHTML = '';  // 清空
+            t.skillsList.forEach(skill => {
+                const span = document.createElement('span');
+                span.className = 'skill-tag';
+                span.innerText = skill;
+                skillsContainer.appendChild(span);
+            });
+
+            // 按钮激活样式
+            document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        }
+
+        // 默认中文
+        switchLang('zh');
+    </script>
+</body>
+</html>
