@@ -125,23 +125,46 @@
             color: #1e293b;
         }
 
-        .edu-item, .exp-item, .project-item {
+        /* 专业技能进度条样式 */
+        .progress-skill {
+            margin-bottom: 1.2rem;
+        }
+        .progress-skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        .progress-bar-bg {
+            background-color: #e2e8f0;
+            border-radius: 30px;
+            height: 10px;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            background-color: #3b82f6;
+            width: 0%;
+            height: 100%;
+            border-radius: 30px;
+        }
+
+        .edu-item, .project-item, .campus-item {
             margin-bottom: 1.5rem;
         }
 
-        .edu-title, .exp-title, .project-title {
+        .edu-title, .project-title, .campus-title {
             font-weight: 600;
             font-size: 1.1rem;
             color: #0f172a;
         }
 
-        .edu-meta, .exp-meta, .project-meta {
+        .edu-meta, .project-meta, .campus-meta {
             color: #64748b;
             font-size: 0.95rem;
             margin-bottom: 0.3rem;
         }
 
-        .exp-desc, .project-desc {
+        .project-desc, .campus-desc {
             padding-left: 1.2rem;
             color: #334155;
             margin-top: 0.3rem;
@@ -211,13 +234,13 @@
             <div>
                 <h2 class="section-title" id="profile-title">👤 个人简介</h2>
                 <p id="profile-content">
-                    华东政法大学会计学专业，GPA 3.89/4.0（前4%），CET-6 602。具备容诚咨询（内控评价）和容诚会计师事务所（IPO审计）实习经验，熟悉企业会计准则与内部控制规范。擅长Excel财务数据分析与Python批量数据处理。严谨细致，对数字敏感，致力于在财务分析/审计领域发展。
+                    华东政法大学会计学专业，GPA 3.8+，CET-6 600+。具备风险咨询和IPO审计实习经验，熟悉企业会计准则与内部控制规范。擅长Excel财务数据分析与Python批量数据处理。严谨细致，对数字敏感，致力于在财务分析/审计领域发展。
                 </p>
             </div>
         </div>
 
-        <!-- 技能 -->
-        <h2 class="section-title" id="skills-title">🛠️ 技能</h2>
+        <!-- 技能标签 -->
+        <h2 class="section-title" id="skills-title">🛠️ 技能标签</h2>
         <div class="skill-tags" id="skills-list">
             <span class="skill-tag">Python（数据分析）</span>
             <span class="skill-tag">Excel高级应用</span>
@@ -226,26 +249,39 @@
             <span class="skill-tag">审计流程</span>
             <span class="skill-tag">财务建模</span>
             <span class="skill-tag">企业会计准则</span>
-            <span class="skill-tag">CET-6 (602)</span>
+            <span class="skill-tag">CET-6 (600+)</span>
         </div>
 
-        <!-- 实习经历（精简版） -->
-        <h2 class="section-title" id="exp-title">💼 实习经历</h2>
-
-        <div class="exp-item">
-            <div class="exp-title" id="exp1-title">容诚咨询（北京）有限公司 · 风险咨询实习生</div>
-            <div class="exp-meta" id="exp1-date">2026.01 – 2026.03</div>
-            <ul class="exp-desc" id="exp1-desc">
-                <li>参与央企内控评价项目，执行投资、采购等流程测试，识别缺陷并协助撰写管理建议。</li>
-            </ul>
-        </div>
-
-        <div class="exp-item">
-            <div class="exp-title" id="exp2-title">容诚会计师事务所（特殊普通合伙）上海分所 · 审计实习生</div>
-            <div class="exp-meta" id="exp2-date">2025.07 – 2025.08</div>
-            <ul class="exp-desc" id="exp2-desc">
-                <li>在IPO审计中完成三单匹配、银行流水核对及财务数据分析。</li>
-            </ul>
+        <!-- 专业技能（进度条） -->
+        <h2 class="section-title" id="pro-skills-title">📊 专业技能</h2>
+        <div id="pro-skills-container">
+            <div class="progress-skill">
+                <div class="progress-skill-header">
+                    <span>Python</span>
+                    <span>80%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="progress-skill">
+                <div class="progress-skill-header">
+                    <span>Power BI</span>
+                    <span>70%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="progress-skill">
+                <div class="progress-skill-header">
+                    <span>SQL</span>
+                    <span>60%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: 60%;"></div>
+                </div>
+            </div>
         </div>
 
         <!-- 项目经历 -->
@@ -260,6 +296,15 @@
             </ul>
         </div>
 
+        <!-- 校园经历（精简） -->
+        <h2 class="section-title" id="campus-title">🎓 校园经历</h2>
+
+        <div class="campus-item">
+            <div class="campus-title" id="campus1-title">华东政法大学校友联络中心 · 融媒体中心部长</div>
+            <div class="campus-meta" id="campus1-date">2024.09 – 至今</div>
+            <!-- 无具体描述 -->
+        </div>
+
         <!-- 荣誉与证书 -->
         <h2 class="section-title" id="honor-title">🎖️ 荣誉与证书</h2>
         <div class="honor-list" id="honor-list">
@@ -267,7 +312,7 @@
                 <li>校级综合奖学金三等奖</li>
                 <li>初级会计证书</li>
                 <li>Python二级</li>
-                <li>CET-6 (602)</li>
+                <li>CET-6 (600+)</li>
             </ul>
         </div>
 
@@ -275,8 +320,8 @@
         <h2 class="section-title" id="edu-title">📚 教育经历</h2>
         <div class="edu-item">
             <div class="edu-title" id="edu-degree">华东政法大学 · 会计学（司法会计方向）</div>
-            <div class="edu-meta" id="edu-date">2024.09 – 至今 · GPA 3.89/4.0 (前4%)</div>
-            <div id="edu-desc">主修课程：中级财务会计、基础会计学、税法学、经济法学、Python与商业数据分析<br>荣誉：校级综合奖学金三等奖 · 初级会计证书 · Python二级</div>
+            <div class="edu-meta" id="edu-date">2024.09 – 至今 · GPA 3.8+</div>
+            <div id="edu-desc">主修课程：中级财务会计、基础会计、税法、经济法学、Python语言与数据结构<br>荣誉：校级综合奖学金三等奖 · 初级会计证书 · Python二级</div>
         </div>
 
         <!-- 最后更新日期 -->
@@ -293,20 +338,10 @@
                 infoEmail: "li_hangshuo@163.com",
                 infoPhone: "13730200952",
                 profileTitle: "👤 个人简介",
-                profileContent: "华东政法大学会计学专业，GPA 3.89/4.0（前4%），CET-6 602。具备容诚咨询（内控评价）和容诚会计师事务所（IPO审计）实习经验，熟悉企业会计准则与内部控制规范。擅长Excel财务数据分析与Python批量数据处理。严谨细致，对数字敏感，致力于在财务分析/审计领域发展。",
-                skillsTitle: "🛠️ 技能",
-                skillsList: ["Python（数据分析）", "Excel高级应用", "Power BI", "内部控制测试", "审计流程", "财务建模", "企业会计准则", "CET-6 (602)"],
-                expTitle: "💼 实习经历",
-                exp1Title: "容诚咨询（北京）有限公司 · 风险咨询实习生",
-                exp1Date: "2026.01 – 2026.03",
-                exp1Desc: [
-                    "参与央企内控评价项目，执行投资、采购等流程测试，识别缺陷并协助撰写管理建议。"
-                ],
-                exp2Title: "容诚会计师事务所（特殊普通合伙）上海分所 · 审计实习生",
-                exp2Date: "2025.07 – 2025.08",
-                exp2Desc: [
-                    "在IPO审计中完成三单匹配、银行流水核对及财务数据分析。"
-                ],
+                profileContent: "华东政法大学会计学专业，GPA 3.8+，CET-6 600+。具备风险咨询和IPO审计实习经验，熟悉企业会计准则与内部控制规范。擅长Excel财务数据分析与Python批量数据处理。严谨细致，对数字敏感，致力于在财务分析/审计领域发展。",
+                skillsTitle: "🛠️ 技能标签",
+                proSkillsTitle: "📊 专业技能",
+                skillsList: ["Python（数据分析）", "Excel高级应用", "Power BI", "内部控制测试", "审计流程", "财务建模", "企业会计准则", "CET-6 (600+)"],
                 projectTitle: "🏆 项目经历",
                 project1Title: "第四届“安永×高顿教育ESG大学生创新挑战赛” · 队长（上海赛区二等奖）",
                 project1Date: "2025.04 – 2025.06",
@@ -314,12 +349,15 @@
                     "领导团队深度分析宁德时代财务报表，聚焦营收结构、研发投入资本化与费用化处理、环保支出等数据，理解公司战略的财务表现。",
                     "使用Power BI、Python将财务分析结果图表化，主导撰写包含财务趋势、结构分析的商业报告，展现财务数据解读与呈现能力。"
                 ],
+                campusTitle: "🎓 校园经历",
+                campus1Title: "华东政法大学校友联络中心 · 融媒体中心部长",
+                campus1Date: "2024.09 – 至今",
                 honorTitle: "🎖️ 荣誉与证书",
-                honorList: ["校级综合奖学金三等奖", "初级会计证书", "Python二级", "CET-6 (602)"],
+                honorList: ["校级综合奖学金三等奖", "初级会计证书", "Python二级", "CET-6 (600+)"],
                 eduTitle: "📚 教育经历",
                 eduDegree: "华东政法大学 · 会计学（司法会计方向）",
-                eduDate: "2024.09 – 至今 · GPA 3.89/4.0 (前4%)",
-                eduDesc: "主修课程：中级财务会计、基础会计学、税法学、经济法学、Python与商业数据分析<br>荣誉：校级综合奖学金三等奖 · 初级会计证书 · Python二级",
+                eduDate: "2024.09 – 至今 · GPA 3.8+",
+                eduDesc: "主修课程：中级财务会计、基础会计、税法、经济法学、Python语言与数据结构<br>荣誉：校级综合奖学金三等奖 · 初级会计证书 · Python二级",
                 lastUpdated: "最后更新：2026年3月22日"
             },
             en: {
@@ -330,20 +368,10 @@
                 infoEmail: "li_hangshuo@163.com",
                 infoPhone: "13730200952",
                 profileTitle: "👤 Profile",
-                profileContent: "Accounting major at ECUPL, GPA 3.89/4.0 (Top 4%), CET-6 602. Internship experience at RSM Consulting (internal control evaluation) and RSM China (IPO audit). Familiar with CAS and internal control standards. Proficient in Excel for financial analysis and Python for batch data processing. Detail-oriented with numerical sensitivity, aiming to develop in financial analysis/audit.",
-                skillsTitle: "🛠️ Skills",
-                skillsList: ["Python (Data Analysis)", "Advanced Excel", "Power BI", "Internal Control Testing", "Audit Procedures", "Financial Modeling", "CAS", "CET-6 (602)"],
-                expTitle: "💼 Internship Experience",
-                exp1Title: "RSM Consulting (Beijing) · Risk Consulting Intern",
-                exp1Date: "Jan 2026 – Mar 2026",
-                exp1Desc: [
-                    "Participated in internal control evaluation for a state-owned enterprise, performing tests on investment and procurement processes, identifying deficiencies, and assisting in drafting management recommendations."
-                ],
-                exp2Title: "RSM China (Shanghai) · Audit Intern",
-                exp2Date: "Jul 2025 – Aug 2025",
-                exp2Desc: [
-                    "Conducted three-way matching, bank reconciliation, and financial data analysis during an IPO audit."
-                ],
+                profileContent: "Accounting major at ECUPL, GPA 3.8+, CET-6 600+. Internship experience in risk consulting and IPO audit. Familiar with CAS and internal control standards. Proficient in Excel for financial analysis and Python for batch data processing. Detail-oriented with numerical sensitivity, aiming to develop in financial analysis/audit.",
+                skillsTitle: "🛠️ Skill Tags",
+                proSkillsTitle: "📊 Professional Skills",
+                skillsList: ["Python (Data Analysis)", "Advanced Excel", "Power BI", "Internal Control Testing", "Audit Procedures", "Financial Modeling", "CAS", "CET-6 (600+)"],
                 projectTitle: "🏆 Project Experience",
                 project1Title: "4th EY × Gaodun ESG University Innovation Challenge · Team Leader (Second Prize, Shanghai Region)",
                 project1Date: "Apr 2025 – Jun 2025",
@@ -351,12 +379,15 @@
                     "Led a team to analyze CATL's financial statements, focusing on revenue structure, R&D capitalization vs. expensing, and environmental expenditures to understand strategic financial performance.",
                     "Visualized financial analysis results using Power BI and Python; authored a business report covering financial trends and structural analysis, demonstrating data interpretation and presentation skills."
                 ],
+                campusTitle: "🎓 Campus Experience",
+                campus1Title: "ECUPL Alumni Liaison Center · Media Center Director",
+                campus1Date: "Sep 2024 – Present",
                 honorTitle: "🎖️ Honors & Certifications",
-                honorList: ["Third-class Scholarship", "Primary Accounting Certificate", "Python Level 2", "CET-6 (602)"],
+                honorList: ["Third-class Scholarship", "Primary Accounting Certificate", "Python Level 2", "CET-6 (600+)"],
                 eduTitle: "📚 Education",
                 eduDegree: "East China University of Political Science and Law · Accounting (Forensic Accounting)",
-                eduDate: "Sep 2024 – Present · GPA 3.89/4.0 (Top 4%)",
-                eduDesc: "Core courses: Intermediate Financial Accounting, Basic Accounting, Tax Law, Economic Law, Python for Business Data Analysis<br>Honors: Third-class Scholarship · Primary Accounting Certificate · Python Level 2",
+                eduDate: "Sep 2024 – Present · GPA 3.8+",
+                eduDesc: "Core courses: Intermediate Financial Accounting, Basic Accounting, Tax Law, Economic Law, Python Language and Data Structures<br>Honors: Third-class Scholarship · Primary Accounting Certificate · Python Level 2",
                 lastUpdated: "Last updated: March 22, 2026"
             }
         };
@@ -376,6 +407,7 @@
             document.getElementById('profile-title').innerText = t.profileTitle;
             document.getElementById('profile-content').innerText = t.profileContent;
             document.getElementById('skills-title').innerText = t.skillsTitle;
+            document.getElementById('pro-skills-title').innerText = t.proSkillsTitle;
 
             // 技能标签
             const skillsContainer = document.getElementById('skills-list');
@@ -385,28 +417,6 @@
                 span.className = 'skill-tag';
                 span.innerText = skill;
                 skillsContainer.appendChild(span);
-            });
-
-            // 实习经历
-            document.getElementById('exp-title').innerText = t.expTitle;
-            document.getElementById('exp1-title').innerText = t.exp1Title;
-            document.getElementById('exp1-date').innerText = t.exp1Date;
-            const exp1Desc = document.getElementById('exp1-desc');
-            exp1Desc.innerHTML = '';
-            t.exp1Desc.forEach(item => {
-                const li = document.createElement('li');
-                li.innerText = item;
-                exp1Desc.appendChild(li);
-            });
-
-            document.getElementById('exp2-title').innerText = t.exp2Title;
-            document.getElementById('exp2-date').innerText = t.exp2Date;
-            const exp2Desc = document.getElementById('exp2-desc');
-            exp2Desc.innerHTML = '';
-            t.exp2Desc.forEach(item => {
-                const li = document.createElement('li');
-                li.innerText = item;
-                exp2Desc.appendChild(li);
             });
 
             // 项目经历
@@ -420,6 +430,11 @@
                 li.innerText = item;
                 project1Desc.appendChild(li);
             });
+
+            // 校园经历（仅标题和日期）
+            document.getElementById('campus-title').innerText = t.campusTitle;
+            document.getElementById('campus1-title').innerText = t.campus1Title;
+            document.getElementById('campus1-date').innerText = t.campus1Date;
 
             // 荣誉与证书
             document.getElementById('honor-title').innerText = t.honorTitle;
