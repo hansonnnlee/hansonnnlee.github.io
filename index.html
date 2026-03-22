@@ -125,18 +125,35 @@
             color: #1e293b;
         }
 
-        .edu-item {
-            margin-bottom: 1.2rem;
+        .edu-item, .exp-item, .project-item {
+            margin-bottom: 1.5rem;
         }
 
-        .edu-title {
+        .edu-title, .exp-title, .project-title {
             font-weight: 600;
             font-size: 1.1rem;
+            color: #0f172a;
         }
 
-        .edu-meta {
+        .edu-meta, .exp-meta, .project-meta {
             color: #64748b;
             font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .exp-desc, .project-desc {
+            padding-left: 1.2rem;
+            color: #334155;
+            margin-top: 0.3rem;
+        }
+
+        .honor-list ul {
+            padding-left: 1.2rem;
+            color: #334155;
+        }
+
+        .honor-list li {
+            margin-bottom: 0.3rem;
         }
 
         .footer-note {
@@ -148,7 +165,6 @@
             padding-top: 1.5rem;
         }
 
-        /* 响应式 */
         @media (max-width: 650px) {
             .grid-2 {
                 grid-template-columns: 1fr;
@@ -167,13 +183,12 @@
             <button class="lang-btn" id="btn-en" onclick="switchLang('en')">English</button>
         </div>
 
-        <!-- 姓名 / 标题（动态显示） -->
+        <!-- 姓名 / 标题 -->
         <h1 id="name">李航硕</h1>
         <div class="subhead" id="subtitle">财务数据分析 · 内部控制 · 审计实习生</div>
 
         <!-- 基本信息 + 简介 两列布局 -->
         <div class="grid-2">
-            <!-- 左侧卡片：基本信息 -->
             <div class="info-card">
                 <div class="info-item">
                     <span class="info-label" id="info-school-label">🏫 学校</span>
@@ -193,7 +208,6 @@
                 </div>
             </div>
 
-            <!-- 右侧：个人简介 -->
             <div>
                 <h2 class="section-title" id="profile-title">👤 个人简介</h2>
                 <p id="profile-content">
@@ -205,7 +219,6 @@
         <!-- 技能 -->
         <h2 class="section-title" id="skills-title">🛠️ 技能</h2>
         <div class="skill-tags" id="skills-list">
-            <!-- 中文技能（默认显示） -->
             <span class="skill-tag">Python（数据分析）</span>
             <span class="skill-tag">Excel高级应用</span>
             <span class="skill-tag">Power BI</span>
@@ -214,6 +227,48 @@
             <span class="skill-tag">财务建模</span>
             <span class="skill-tag">企业会计准则</span>
             <span class="skill-tag">CET-6 (602)</span>
+        </div>
+
+        <!-- 实习经历（精简版） -->
+        <h2 class="section-title" id="exp-title">💼 实习经历</h2>
+
+        <div class="exp-item">
+            <div class="exp-title" id="exp1-title">容诚咨询（北京）有限公司 · 风险咨询实习生</div>
+            <div class="exp-meta" id="exp1-date">2026.01 – 2026.03</div>
+            <ul class="exp-desc" id="exp1-desc">
+                <li>参与央企内控评价项目，执行投资、采购等流程测试，识别缺陷并协助撰写管理建议。</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-title" id="exp2-title">容诚会计师事务所（特殊普通合伙）上海分所 · 审计实习生</div>
+            <div class="exp-meta" id="exp2-date">2025.07 – 2025.08</div>
+            <ul class="exp-desc" id="exp2-desc">
+                <li>在IPO审计中完成三单匹配、银行流水核对及财务数据分析。</li>
+            </ul>
+        </div>
+
+        <!-- 项目经历 -->
+        <h2 class="section-title" id="project-title">🏆 项目经历</h2>
+
+        <div class="project-item">
+            <div class="project-title" id="project1-title">第四届“安永×高顿教育ESG大学生创新挑战赛” · 队长（上海赛区二等奖）</div>
+            <div class="project-meta" id="project1-date">2025.04 – 2025.06</div>
+            <ul class="project-desc" id="project1-desc">
+                <li>领导团队深度分析宁德时代财务报表，聚焦营收结构、研发投入资本化与费用化处理、环保支出等数据，理解公司战略的财务表现。</li>
+                <li>使用Power BI、Python将财务分析结果图表化，主导撰写包含财务趋势、结构分析的商业报告，展现财务数据解读与呈现能力。</li>
+            </ul>
+        </div>
+
+        <!-- 荣誉与证书 -->
+        <h2 class="section-title" id="honor-title">🎖️ 荣誉与证书</h2>
+        <div class="honor-list" id="honor-list">
+            <ul>
+                <li>校级综合奖学金三等奖</li>
+                <li>初级会计证书</li>
+                <li>Python二级</li>
+                <li>CET-6 (602)</li>
+            </ul>
         </div>
 
         <!-- 教育经历 -->
@@ -225,14 +280,13 @@
         </div>
 
         <!-- 最后更新日期 -->
-        <div class="footer-note" id="last-updated">最后更新：2026年3月16日</div>
+        <div class="footer-note" id="last-updated">最后更新：2026年3月22日</div>
     </div>
 
     <script>
-        // 中英文内容映射
         const translations = {
             zh: {
-                name: "李航硕",                       // 修改为正确中文名
+                name: "李航硕",
                 subtitle: "财务数据分析 · 内部控制 · 审计实习生",
                 infoSchool: "华东政法大学 · 会计学（司法会计方向）",
                 infoInterest: "财务数据分析 / 内部控制 / 审计",
@@ -242,14 +296,34 @@
                 profileContent: "华东政法大学会计学专业，GPA 3.89/4.0（前4%），CET-6 602。具备容诚咨询（内控评价）和容诚会计师事务所（IPO审计）实习经验，熟悉企业会计准则与内部控制规范。擅长Excel财务数据分析与Python批量数据处理。严谨细致，对数字敏感，致力于在财务分析/审计领域发展。",
                 skillsTitle: "🛠️ 技能",
                 skillsList: ["Python（数据分析）", "Excel高级应用", "Power BI", "内部控制测试", "审计流程", "财务建模", "企业会计准则", "CET-6 (602)"],
+                expTitle: "💼 实习经历",
+                exp1Title: "容诚咨询（北京）有限公司 · 风险咨询实习生",
+                exp1Date: "2026.01 – 2026.03",
+                exp1Desc: [
+                    "参与央企内控评价项目，执行投资、采购等流程测试，识别缺陷并协助撰写管理建议。"
+                ],
+                exp2Title: "容诚会计师事务所（特殊普通合伙）上海分所 · 审计实习生",
+                exp2Date: "2025.07 – 2025.08",
+                exp2Desc: [
+                    "在IPO审计中完成三单匹配、银行流水核对及财务数据分析。"
+                ],
+                projectTitle: "🏆 项目经历",
+                project1Title: "第四届“安永×高顿教育ESG大学生创新挑战赛” · 队长（上海赛区二等奖）",
+                project1Date: "2025.04 – 2025.06",
+                project1Desc: [
+                    "领导团队深度分析宁德时代财务报表，聚焦营收结构、研发投入资本化与费用化处理、环保支出等数据，理解公司战略的财务表现。",
+                    "使用Power BI、Python将财务分析结果图表化，主导撰写包含财务趋势、结构分析的商业报告，展现财务数据解读与呈现能力。"
+                ],
+                honorTitle: "🎖️ 荣誉与证书",
+                honorList: ["校级综合奖学金三等奖", "初级会计证书", "Python二级", "CET-6 (602)"],
                 eduTitle: "📚 教育经历",
                 eduDegree: "华东政法大学 · 会计学（司法会计方向）",
                 eduDate: "2024.09 – 至今 · GPA 3.89/4.0 (前4%)",
                 eduDesc: "主修课程：中级财务会计、基础会计学、税法学、经济法学、Python与商业数据分析<br>荣誉：校级综合奖学金三等奖 · 初级会计证书 · Python二级",
-                lastUpdated: "最后更新：2026年3月16日"
+                lastUpdated: "最后更新：2026年3月22日"
             },
             en: {
-                name: "Hanson Li",                     // 英文名按用户要求设置为 Hanson Li
+                name: "Hanson Li",
                 subtitle: "Financial Data Analysis · Internal Control · Audit Intern",
                 infoSchool: "East China University of Political Science and Law · Accounting (Forensic Accounting)",
                 infoInterest: "Financial Data Analytics / Internal Control / Auditing",
@@ -259,11 +333,31 @@
                 profileContent: "Accounting major at ECUPL, GPA 3.89/4.0 (Top 4%), CET-6 602. Internship experience at RSM Consulting (internal control evaluation) and RSM China (IPO audit). Familiar with CAS and internal control standards. Proficient in Excel for financial analysis and Python for batch data processing. Detail-oriented with numerical sensitivity, aiming to develop in financial analysis/audit.",
                 skillsTitle: "🛠️ Skills",
                 skillsList: ["Python (Data Analysis)", "Advanced Excel", "Power BI", "Internal Control Testing", "Audit Procedures", "Financial Modeling", "CAS", "CET-6 (602)"],
+                expTitle: "💼 Internship Experience",
+                exp1Title: "RSM Consulting (Beijing) · Risk Consulting Intern",
+                exp1Date: "Jan 2026 – Mar 2026",
+                exp1Desc: [
+                    "Participated in internal control evaluation for a state-owned enterprise, performing tests on investment and procurement processes, identifying deficiencies, and assisting in drafting management recommendations."
+                ],
+                exp2Title: "RSM China (Shanghai) · Audit Intern",
+                exp2Date: "Jul 2025 – Aug 2025",
+                exp2Desc: [
+                    "Conducted three-way matching, bank reconciliation, and financial data analysis during an IPO audit."
+                ],
+                projectTitle: "🏆 Project Experience",
+                project1Title: "4th EY × Gaodun ESG University Innovation Challenge · Team Leader (Second Prize, Shanghai Region)",
+                project1Date: "Apr 2025 – Jun 2025",
+                project1Desc: [
+                    "Led a team to analyze CATL's financial statements, focusing on revenue structure, R&D capitalization vs. expensing, and environmental expenditures to understand strategic financial performance.",
+                    "Visualized financial analysis results using Power BI and Python; authored a business report covering financial trends and structural analysis, demonstrating data interpretation and presentation skills."
+                ],
+                honorTitle: "🎖️ Honors & Certifications",
+                honorList: ["Third-class Scholarship", "Primary Accounting Certificate", "Python Level 2", "CET-6 (602)"],
                 eduTitle: "📚 Education",
                 eduDegree: "East China University of Political Science and Law · Accounting (Forensic Accounting)",
                 eduDate: "Sep 2024 – Present · GPA 3.89/4.0 (Top 4%)",
                 eduDesc: "Core courses: Intermediate Financial Accounting, Basic Accounting, Tax Law, Economic Law, Python for Business Data Analysis<br>Honors: Third-class Scholarship · Primary Accounting Certificate · Python Level 2",
-                lastUpdated: "Last updated: March 16, 2026"
+                lastUpdated: "Last updated: March 22, 2026"
             }
         };
 
@@ -273,7 +367,6 @@
             currentLang = lang;
             const t = translations[lang];
 
-            // 更新文本内容
             document.getElementById('name').innerText = t.name;
             document.getElementById('subtitle').innerText = t.subtitle;
             document.getElementById('info-school').innerText = t.infoSchool;
@@ -283,15 +376,10 @@
             document.getElementById('profile-title').innerText = t.profileTitle;
             document.getElementById('profile-content').innerText = t.profileContent;
             document.getElementById('skills-title').innerText = t.skillsTitle;
-            document.getElementById('edu-title').innerText = t.eduTitle;
-            document.getElementById('edu-degree').innerText = t.eduDegree;
-            document.getElementById('edu-date').innerText = t.eduDate;
-            document.getElementById('edu-desc').innerHTML = t.eduDesc;  // 注意innerHTML以支持<br>
-            document.getElementById('last-updated').innerText = t.lastUpdated;
 
-            // 更新技能标签（重新生成）
+            // 技能标签
             const skillsContainer = document.getElementById('skills-list');
-            skillsContainer.innerHTML = '';  // 清空
+            skillsContainer.innerHTML = '';
             t.skillsList.forEach(skill => {
                 const span = document.createElement('span');
                 span.className = 'skill-tag';
@@ -299,12 +387,64 @@
                 skillsContainer.appendChild(span);
             });
 
-            // 按钮激活样式
+            // 实习经历
+            document.getElementById('exp-title').innerText = t.expTitle;
+            document.getElementById('exp1-title').innerText = t.exp1Title;
+            document.getElementById('exp1-date').innerText = t.exp1Date;
+            const exp1Desc = document.getElementById('exp1-desc');
+            exp1Desc.innerHTML = '';
+            t.exp1Desc.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                exp1Desc.appendChild(li);
+            });
+
+            document.getElementById('exp2-title').innerText = t.exp2Title;
+            document.getElementById('exp2-date').innerText = t.exp2Date;
+            const exp2Desc = document.getElementById('exp2-desc');
+            exp2Desc.innerHTML = '';
+            t.exp2Desc.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                exp2Desc.appendChild(li);
+            });
+
+            // 项目经历
+            document.getElementById('project-title').innerText = t.projectTitle;
+            document.getElementById('project1-title').innerText = t.project1Title;
+            document.getElementById('project1-date').innerText = t.project1Date;
+            const project1Desc = document.getElementById('project1-desc');
+            project1Desc.innerHTML = '';
+            t.project1Desc.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                project1Desc.appendChild(li);
+            });
+
+            // 荣誉与证书
+            document.getElementById('honor-title').innerText = t.honorTitle;
+            const honorList = document.getElementById('honor-list');
+            honorList.innerHTML = '<ul></ul>';
+            const ul = honorList.querySelector('ul');
+            t.honorList.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                ul.appendChild(li);
+            });
+
+            // 教育经历
+            document.getElementById('edu-title').innerText = t.eduTitle;
+            document.getElementById('edu-degree').innerText = t.eduDegree;
+            document.getElementById('edu-date').innerText = t.eduDate;
+            document.getElementById('edu-desc').innerHTML = t.eduDesc;
+
+            document.getElementById('last-updated').innerText = t.lastUpdated;
+
+            // 按钮样式
             document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
         }
 
-        // 默认中文
         switchLang('zh');
     </script>
 </body>
